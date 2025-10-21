@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Books CRUD — Library</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Library Manager</h1>
+    <p>Manage your book collection — add, edit, view, delete.</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="form-grid">
+        <input id="book-title" placeholder="Title" />
+        <input id="book-author" placeholder="Author" />
+        <input id="book-genre" placeholder="Genre" />
+        <input id="book-year" placeholder="Year" type="number" />
+        <input id="book-rating" placeholder="Rating (0-5)" type="number" step="0.1" />
+        <div class="form-actions">
+          <button id="book-save" class="btn primary">Save Book</button>
+          <button id="book-reset" class="btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table id="books-table">
+          <thead><tr><th>ID</th><th>Title</th><th>Author</th><th>Genre</th><th>Year</th><th>Rating</th><th>Actions</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Books CRUD — demo project</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
