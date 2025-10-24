@@ -1,0 +1,19 @@
+{
+  "name": "books-crud-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "migrate": "node run_migrations.js",
+    "migrate:pg": "node run_migrations_pg.js",
+    "seed:pg": "node run_seed_pg.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "pg": "^8.11.0",
+    "dotenv": "^16.3.1"
+  }
+}
