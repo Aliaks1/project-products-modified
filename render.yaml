@@ -1,0 +1,23 @@
+# Render Infrastructure-as-Code for Books CRUD project
+# This file tells Render to create a managed Postgres database and a web service,
+# and to wire DATABASE_URL automatically from the managed DB.
+# After pushing to GitHub, create a new Render "Import from GitHub" and select this repo.
+services:
+  - type: web
+    name: books-crud-backend
+    env: node
+    plan: free
+    branch: main
+    repo: <YOUR_GITHUB_OWNER>/<YOUR_REPO_NAME> # replace before import or leave for manual selection
+    buildCommand: 'npm install'
+    startCommand: 'npm run migrate:pg && npm start'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: books-crud-db
+
+databases:
+  - name: books-crud-db
+    engine: POSTGRES
+    plan: starter
+    version: "15"
