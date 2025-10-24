@@ -69,16 +69,6 @@ Aliaksandra Bryshten
 Numer indeksu: 69000
 Uniwersytet Vistula
 
-📄 Kolejne kroki w GitHub (aby mieć więcej commitów)
-
-1️⃣ Dodaj nowy plik do śledzenia:
-
-git add README.md
-
-
-2️⃣ Zrób kommit z opisem:
-
-git commit -m "docs: zaktualizowano README z pełnym opisem projektu"
 
 
 3️⃣ Wyślij na GitHub:
