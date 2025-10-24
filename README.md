@@ -1,69 +1,86 @@
-# Books CRUD — Mini Project
+Aplikacja CRUD – Zarządzanie książkami
+Opis projektu
 
-This project implements a full CRUD flow for a single entity **Books** (title, author, genre, year, rating).
-It includes a **Node.js + Express** backend with **SQLite** migrations and a simple SPA frontend (HTML/CSS/JS).
+Projekt przedstawia prostą aplikację typu CRUD (Create, Read, Update, Delete) umożliwiającą zarządzanie bazą danych książek.
+Użytkownik może dodawać, edytować, usuwać i przeglądać książki poprzez interfejs przeglądarkowy.
+Aplikacja została zbudowana w technologii Node.js z użyciem bazy danych SQLite.
 
-> Note: The project is prepared for quick local usage (SQLite). If you want to deploy with PostgreSQL on Render, see the **Deploy** section below.
+Technologie
 
-## Structure
-```
-/backend    # Express API, migrations, runs on port 3000
-/frontend   # Static SPA (served by backend)
-```
+Node.js
 
-## Run locally
-1. Install Node (16+). In a terminal:
-```bash
+Express.js
+
+SQLite
+
+HTML, CSS, JavaScript
+
+Render (hosting)
+
+Struktura katalogów
+project-products-modified-main/
+│
+├── backend/                # logika serwera
+│   ├── server.js           # główny plik serwera
+│   ├── data.db             # baza danych SQLite
+│   ├── migrations/         # pliki SQL do tworzenia tabel
+│   ├── seeds/              # dane przykładowe
+│   ├── package.json        # konfiguracja zależności backendu
+│
+├── frontend/               # część kliencka aplikacji
+│   ├── index.html          # główny plik interfejsu
+│   ├── style.css           # arkusz stylów
+│   ├── app.js              # logika frontendu
+│
+├── .gitignore              # plik ignorowanych elementów
+├── README.md               # dokumentacja projektu
+└── render.yaml             # konfiguracja wdrożenia
+
+Instalacja i uruchomienie lokalne
+
+Otwórz terminal i przejdź do folderu backend
+
 cd backend
+
+
+Zainstaluj zależności:
+
 npm install
-npm run migrate
-npm start
-```
-2. Open `http://localhost:3000` in your browser.
-
-## API Endpoints
-- `GET /api/books` — list books (200)
-- `GET /api/books/:id` — get book (200) or (404)
-- `POST /api/books` — create (201) or (400)
-  - body: `{ title, author, genre, year, rating }`
-- `PUT /api/books/:id` — update (200) or (400/404)
-- `DELETE /api/books/:id` — delete (204) or (404)
-
-Validation errors return `400` with `errors` array.
-
-## Switching to PostgreSQL (for Render)
-1. Create a PostgreSQL database on your host (Render, Railway, etc.).
-2. Set environment variable `DATABASE_URL` or configure your provider to set `DB_FILE` (if using SQLite choose not to).
-3. Use the provided SQL in `backend/migrations/001_create_books.sql` as Postgres-compatible (it is). Run migrations using psql or adapt the `run_migrations.js` to run SQL on Postgres (simple option: run the SQL file via psql).
-
-## Deploy suggestions
-- Backend: Render (create a Web Service, build command `npm install`, start `npm start`). Ensure to run `npm run migrate` on deploy or add migration step.
-- Frontend: you can serve via the backend (current config) or host static on Vercel/Netlify and point API to backend URL.
-
-## Files included
-- backend/package.json, server.js, run_migrations.js, migrations/001_create_books.sql
-- frontend/index.html, style.css, app.js
-- README
-
-Enjoy — if you want, I can also:
-- Convert migrations to Flyway or Sequelize migrations for PostgreSQL.
-- Add seed data and automated deploy files (`render.yaml`, `vercel.json`).
-- Create a git repo with commit history and PR-ready structure.
-- Produce a PostgreSQL-ready backend instead of SQLite.
 
 
-## PostgreSQL (Render) migrations & seeding
+Uruchom serwer:
 
-To run PostgreSQL migrations locally or on your host, set `DATABASE_URL` env var (Postgres connection string).
-
-Example (macOS / Linux):
-```bash
-export DATABASE_URL=postgres://user:password@localhost:5432/booksdb
-cd backend
-npm install
-npm run migrate:pg    # runs SQL files in backend/migrations
-npm run seed:pg       # inserts seed data
 node server.js
-```
 
-On **Render**, you can configure the service to run `npm run migrate:pg` before `npm start` (see `render.yaml` included).
+
+Otwórz w przeglądarce:
+
+http://localhost:3000
+
+Opis działania
+
+Po uruchomieniu aplikacja automatycznie tworzy bazę danych SQLite oraz tabelę books (jeśli nie istnieje).
+Dane książek można dodawać, edytować, usuwać i przeglądać bezpośrednio przez interfejs webowy.
+Całość działa lokalnie lub na hostingu Render.
+
+Autor
+
+Aliaksandra Bryshten
+Numer indeksu: 69000
+Uniwersytet Vistula
+
+📄 Kolejne kroki w GitHub (aby mieć więcej commitów)
+
+1️⃣ Dodaj nowy plik do śledzenia:
+
+git add README.md
+
+
+2️⃣ Zrób kommit z opisem:
+
+git commit -m "docs: zaktualizowano README z pełnym opisem projektu"
+
+
+3️⃣ Wyślij na GitHub:
+
+git push origin main
