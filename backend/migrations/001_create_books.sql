@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS books (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  author TEXT NOT NULL,
+  genre TEXT NOT NULL,
+  year INTEGER NOT NULL CHECK (year >= 0),
+  rating REAL NOT NULL CHECK (rating >= 0 AND rating <= 5)
+);
