@@ -68,9 +68,3 @@ Autor
 Aliaksandra Bryshten
 Numer indeksu: 69000
 Uniwersytet Vistula
-
-
-
-3️⃣ Wyślij na GitHub:
-
-git push origin main
